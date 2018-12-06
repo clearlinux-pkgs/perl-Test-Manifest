@@ -72,7 +72,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1Test/Manifest.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Test/Manifest.pm
 
 %files dev
 %defattr(-,root,root,-)
