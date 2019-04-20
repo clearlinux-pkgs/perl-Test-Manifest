@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Manifest
 Version  : 2.021
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Test-Manifest-2.021.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Test-Manifest-2.021.tar.gz
 Summary  : configure which test files to run
