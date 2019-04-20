@@ -4,10 +4,10 @@
 #
 Name     : perl-Test-Manifest
 Version  : 2.021
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Test-Manifest-2.021.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Test-Manifest-2.021.tar.gz
-Summary  : 'interact with a t/test_manifest file'
+Summary  : configure which test files to run
 Group    : Development/Tools
 License  : Artistic-2.0
 Requires: perl-Test-Manifest-license = %{version}-%{release}
@@ -20,6 +20,7 @@ See the tests in the t/ directory for examples until I add some more.
 Summary: dev components for the perl-Test-Manifest package.
 Group: Development
 Provides: perl-Test-Manifest-devel = %{version}-%{release}
+Requires: perl-Test-Manifest = %{version}-%{release}
 
 %description dev
 dev components for the perl-Test-Manifest package.
