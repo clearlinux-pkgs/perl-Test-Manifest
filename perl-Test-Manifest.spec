@@ -4,13 +4,14 @@
 #
 Name     : perl-Test-Manifest
 Version  : 2.021
-Release  : 16
+Release  : 17
 URL      : https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Test-Manifest-2.021.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Test-Manifest-2.021.tar.gz
-Summary  : configure which test files to run
+Summary  : 'interact with a t/test_manifest file'
 Group    : Development/Tools
 License  : Artistic-2.0
 Requires: perl-Test-Manifest-license = %{version}-%{release}
+Requires: perl-Test-Manifest-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -34,14 +35,24 @@ Group: Default
 license components for the perl-Test-Manifest package.
 
 
+%package perl
+Summary: perl components for the perl-Test-Manifest package.
+Group: Default
+Requires: perl-Test-Manifest = %{version}-%{release}
+
+%description perl
+perl components for the perl-Test-Manifest package.
+
+
 %prep
 %setup -q -n Test-Manifest-2.021
+cd %{_builddir}/Test-Manifest-2.021
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -51,7 +62,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -60,7 +71,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Test-Manifest
-cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Test-Manifest/LICENSE
+cp %{_builddir}/Test-Manifest-2.021/LICENSE %{buildroot}/usr/share/package-licenses/perl-Test-Manifest/22bc6b9310295913e198979ee064ecc65120b04d
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -73,7 +84,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Manifest.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -81,4 +91,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-Test-Manifest/LICENSE
+/usr/share/package-licenses/perl-Test-Manifest/22bc6b9310295913e198979ee064ecc65120b04d
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Manifest.pm
