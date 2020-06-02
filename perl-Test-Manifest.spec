@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Manifest
 Version  : 2.021
-Release  : 18
+Release  : 19
 URL      : https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Test-Manifest-2.021.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Test-Manifest-2.021.tar.gz
 Summary  : 'interact with a t/test_manifest file'
@@ -95,4 +95,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/Test/Manifest.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Test/Manifest.pm
