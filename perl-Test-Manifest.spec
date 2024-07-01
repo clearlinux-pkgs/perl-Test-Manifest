@@ -7,7 +7,7 @@
 #
 Name     : perl-Test-Manifest
 Version  : 2.024
-Release  : 34
+Release  : 35
 URL      : https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Test-Manifest-2.024.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/B/BD/BDFOY/Test-Manifest-2.024.tar.gz
 Summary  : 'interact with a t/test_manifest file'
